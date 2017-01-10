@@ -16,8 +16,35 @@
     $x = 15;
     $y = 4;
     $result = fmod($x,$y);
-    echo $result
+    echo $result;
 
 
-    ?>
+
+
+                function almelo($steden_info){
+
+                    $steden_info = array();
+
+                }
+
+                almelo();
+
+
+                $ding = 1;
+
+
+                switch ($ding){
+
+                    case 1:
+                        echo "oh crap";
+                        break;
+
+                    case 2:
+                        break:
+
+                    default:
+                        echo "you suck";
+                        break;
+                }
+?>
 

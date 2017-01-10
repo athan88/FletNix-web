@@ -62,6 +62,7 @@ header{
 
 .searchbar{
     width:50%;
+
 }
 
 .logo{
@@ -79,6 +80,9 @@ header{
 }
 
 /* search */
+.textbox{
+    text-align: center;
+}
 .search{
 
 
@@ -145,8 +149,8 @@ a.search:hover{
 
 .dropdown-content {
     display: none;
-    margin-top: 21%;
-    position: relative;
+    margin-top: 100%;
+    position: absolute;
 
     background-color: #0f0f0f;
 
@@ -224,8 +228,10 @@ footer a:hover p{
 */
 
 #content{
-    position:static;
-    margin-top: 8vh;
+    position: absolute;
+    top: 10%;
+    display: block;
+    width: 100%;
 }
 
 #content h1{
@@ -251,6 +257,7 @@ footer a:hover p{
 }
 
 
+
 /*thumbnails*/
 
 #thumbnails{
@@ -269,25 +276,15 @@ footer a:hover p{
 }
 
 .thumbnail{
-
     width:33.33%;
-
 }
 
 .thumbnail img{
-
-
     display: block;
     margin: 0 auto 6% auto;
     width:94%;
     height: auto;
 }
-
-
-
-
-
-
 
 
 /*movies*/
@@ -485,14 +482,13 @@ footer a:hover p{
 #searchboxes{
 
     /*position*/
-    display: -webkit-flex;
-    display: flex;
+    display: block;
     height: 10%;
     width: 100%;
-    margin-top: 2%;
     box-sizing: border-box;
     justify-content: center;
-
+    position: absolute;
+    top:7%;
 
     /*decoration*/
     background-color: #0f0f0f;
@@ -503,14 +499,26 @@ footer a:hover p{
 }
 #searchboxes form{
     width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
 }
 
 .searchbox{
 
-    margin: 10%;
+    background-color: #222233;
+    color: #FFFFFF;
     font-size: 4vh;
     display: inline-block;
+    width: 10%;
+    text-align: center;
 
+
+}
+
+.searchbox option{
+    background-color: #222233;
+    color: #FFFFFF;
 }
 
 .searchbox select, .searchbox input{
@@ -518,6 +526,35 @@ footer a:hover p{
     display: inline-block;
     background-color: #222233;
     color:#FFFFFF;
+}
+
+#content-search{
+    position: absolute;
+    top: 20%;
+    display: block;
+    width: 100%;
+}
+
+#content-search h1{
+
+    /*position*/
+    border-bottom: 4px solid #AACCFF;
+    padding: 0 0 1vh 1vw;
+
+    /*decoration*/
+    color: #FFFFFF;
+    font-size: 3vh;
+
+}
+
+#content-search p{
+    color: #FFFFFF;
+    font-size: 2vw;
+}
+
+#content-search img:hover{
+    box-shadow: 0 0 3.5vw #FFFFFF;
+
 }
 
 
@@ -538,7 +575,7 @@ footer a:hover p{
     width: 80%;
     height: 80%;
 
-    margin: 10% auto 10% auto;
+    margin: 5% auto 10% auto;
     padding: 1%;
 
 }

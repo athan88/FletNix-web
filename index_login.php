@@ -1,9 +1,7 @@
 <?php
 
     require 'connection.php';
-
-
-
+    include 'phpFunctions.php';
 
 ?>
 
@@ -84,7 +82,6 @@
 
                     echo '</div>';
                 }
-
 
 
             ?>
