@@ -46,9 +46,9 @@ header{
     /*position*/
     display: -webkit-flex;
     display: flex;
-    flex-direction:row;
     position:fixed;
     justify-content:space-between;
+    align-items: center;
 
 
     top:0;
@@ -75,6 +75,7 @@ header{
     display:inline-block;
     z-index: 6;
     margin-left: .8vw;
+    align-self: flex-start;
 
 
 }
@@ -83,6 +84,7 @@ header{
 .textbox{
     text-align: center;
 }
+
 .search{
 
 
@@ -133,9 +135,16 @@ a.search:hover{
     background-color: #222233;
 }
 
+.search .textbox:hover{
+    background-color: #222233;
+}
 /*dropdown account menu*/
 .dropdown {
 
+    /*position*/
+    align-self: flex-end;
+
+    /*decoration*/
     height: 100%;
     z-index: 6;
     margin-right: .2vw;
@@ -527,6 +536,10 @@ footer a:hover p{
     background-color: #222233;
     color:#FFFFFF;
 }
+.searchbox:hover{
+    background-color: #AACCFF;
+}
+
 
 #content-search{
     position: absolute;
@@ -540,6 +553,7 @@ footer a:hover p{
     /*position*/
     border-bottom: 4px solid #AACCFF;
     padding: 0 0 1vh 1vw;
+    margin-bottom: .5%;
 
     /*decoration*/
     color: #FFFFFF;

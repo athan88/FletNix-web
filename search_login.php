@@ -25,7 +25,6 @@ $keywords = $_GET;
 
 </head>
 
-
 <body>
 
     <header>
@@ -37,11 +36,10 @@ $keywords = $_GET;
 
             <div class="search">
 
-                <input type="text" class="textbox" name="keywords" placeholder="<?php echo $_GET['keywords'] ?>">
+                <input type="text" class="textbox" name="keywords" placeholder="search">
 
             </div>
         </form>
-
 
 
         <div class="dropdown">
@@ -60,59 +58,69 @@ $keywords = $_GET;
 
         <form method="get" action="search_login.php">
 
-            <select class="searchbox" name="Genre">
+            <select class="searchbox" name="Genre" >
+                <option disabled selected value>Genre</option>
+                <?php
 
-                    <option value="Action">Action</option>
-                    <option value="Adventure">Adventure</option>
-                    <option value="Animation">Animation</option>
-                    <option value="Horoor">Comedy</option>
-                    <option value="Sci-Fi">Sci-Fi</option>
-                    <option value="Horoor">Horror</option>
-                    <option value="Sci-Fi">Sci-Fi</option>
-                    <option value="Horoor">Horror</option>
-                    <option value="Sci-Fi">Sci-Fi</option>
-                    <option value="Horoor">Horror</option>
+                /*getting all the movie genres*/
+                    $query = 'SELECT * FROM genre';
+                    executeQuery($query);
 
+                    foreach($data as $row){
+                        echo "<option value=".$row[0].">$row[0]</option>";
+                    }
+                ?>
             </select>
 
-                <input class="searchbox" type="text" class="textbox" placeholder="Actor">
-                <input class="searchbox" type="text" class="textbox" placeholder="Director">
-                <input class="searchbox" type="text" class="textbox" placeholder="Year">
+                <input class="searchbox" type="text" name="Actor" class="textbox" placeholder="Actor">
+                <input class="searchbox" type="text" name="Director" class="textbox" placeholder="Director">
+                <input class="searchbox" type="text" name="Year" class="textbox" placeholder="Year">
+                <input class="searchbox" type="text" name="keywords" class="textbox" placeholder="title">
+                <input class="searchbox" type="submit" value="search">
+
 
             </div>
 
         </form>
-
-
-
-
 
     </div>
 
 
     <div id="content-search">
 
+
+        <h1>Results</h1>
+
         <div id="thumbnails">
+
 
             <?php
 
             /*clean the user input */
-            $input = $_GET['keywords'];
-            $input = str_replace("'", "''", $input);
+            if(isset($_GET['keywords'])) {
 
-            /*create the query*/
-            $query = "SELECT * FROM Movie WHERE title like '%$input%'";
-            $statement = $connection->prepare($query);
-            $statement->execute();
-            $data=$statement->fetchAll();
+                $input = str_replace("'", "''", $_GET['keywords']);
 
+                /*create the query*/
+                $query = "SELECT * FROM Movie WHERE title like '%$input%'";
+
+            }
+            if(isset($_GET['Actor'])){
+
+                $input = str_replace("'","''", $_GET['Actor']);
+                $query = "  select Movie.movie_id, Movie.title, Movie.duration, Movie.[description], Movie.cover_image, Movie.previous_part, Movie.[URL], Movie.series
+                            from Movie join Movie_cast
+                            on Movie_cast.movie_id = Movie.movie_id
+                            join Person 
+                            on Person.person_id = Movie_cast.person_id
+                            where Person.firstname like '%$input%' OR Person.lastname like '%$input%' ";
+
+            }
+            executeQuery($query);
 
             /*creating the tumbnail for each movie*/
-
             foreach ($data as $row) {
-
                 echo '<div class="thumbnail">';
-
 
                 $title = urlencode($row[1]);
 
@@ -121,21 +129,11 @@ $keywords = $_GET;
 
                 echo '</div>';
             }
-
-
             ?>
-
-
 
         </div>
 
-
-        <h1>Results</h1>
-
-
-
     </div>
-
 
 
     <footer>
