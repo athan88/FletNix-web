@@ -108,12 +108,20 @@ $keywords = $_GET;
             if(isset($_GET['Actor'])){
 
                 $input = str_replace("'","''", $_GET['Actor']);
-                $query = "  select Movie.movie_id, Movie.title, Movie.duration, Movie.[description], Movie.cover_image, Movie.previous_part, Movie.[URL], Movie.series
-                            from Movie join Movie_cast
-                            on Movie_cast.movie_id = Movie.movie_id
-                            join Person 
-                            on Person.person_id = Movie_cast.person_id
-                            where Person.firstname like '%$input%' OR Person.lastname like '%$input%' ";
+                $query = "  SELECT Movie.movie_id, Movie.title, Movie.duration, Movie.[description], Movie.cover_image, Movie.previous_part, Movie.[URL], Movie.series
+                            FROM Movie 
+                            LEFT JOIN Movie_genre 
+                            ON Movie.movie_id = Movie_genre.movie_id
+                            LEFT JOIN Movie_cast
+                            ON Movie_cast.movie_id = Movie.movie_id
+                            LEFT JOIN Person 
+                            ON Person.person_id = Movie_cast.person_id
+                            LEFT JOIN Movie_director 
+                            ON Person.person_id = Movie_director.person_id
+                            WHERE Movie.movie_id IS NOT NULL
+                            ";
+                            
+                
 
             }
             executeQuery($query);

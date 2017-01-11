@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f06cba39-f134-4fd0-bd63-7319e8447527" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FletNix Style.css" afterPath="$PROJECT_DIR$/FletNix Style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSS/FletNix Style.css" afterPath="$PROJECT_DIR$/CSS/FletNix Style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/search_login.php" afterPath="$PROJECT_DIR$/search_login.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,8 +30,8 @@
       <file leaf-file-name="index_login.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index_login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="31" lean-forward="false" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+            <state relative-caret-position="-102">
+              <caret line="12" column="16" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
               <folding>
                 <marker date="1484070499320" expanded="true" signature="1165:1184" ph="SELECT * FRO... Movie" />
                 <marker date="1484070499320" expanded="true" signature="1796:1817" ph="..." />
@@ -44,7 +44,7 @@
         <entry file="file://$PROJECT_DIR$/watch.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding>
                 <marker date="1484061467352" expanded="true" signature="208:223" ph="SELECT * FRO... MOVIE" />
                 <marker date="1484061467352" expanded="true" signature="208:241" ph="SELECT * FRO... MOVIE" />
@@ -115,16 +115,17 @@
       <file leaf-file-name="search_login.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/search_login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="128" column="0" lean-forward="true" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+            <state relative-caret-position="595">
+              <caret line="125" column="13" lean-forward="true" selection-start-line="125" selection-start-column="13" selection-end-line="125" selection-end-column="13" />
               <folding>
-                <marker date="1484136229460" expanded="true" signature="1125:2187" ph="..." />
-                <marker date="1484136229460" expanded="true" signature="1401:1420" ph="SELECT * FRO... genre" />
-                <marker date="1484136229460" expanded="true" signature="2514:2561" ph="SELECT * FRO... Movie" />
-                <marker date="1484136229460" expanded="true" signature="2711:3186" ph="select Movie... Movie" />
-                <marker date="1484136229460" expanded="true" signature="2711:3187" ph="SELECT * FRO... Movie" />
-                <marker date="1484136229460" expanded="true" signature="3252:3292" ph="/*creating t... " />
-                <marker date="1484136229460" expanded="true" signature="3672:3745" ph="..." />
+                <marker date="1484151017875" expanded="true" signature="1125:2187" ph="..." />
+                <marker date="1484151017875" expanded="true" signature="1401:1420" ph="SELECT * FRO... genre" />
+                <marker date="1484151017875" expanded="true" signature="2514:2561" ph="SELECT * FRO... Movie" />
+                <marker date="1484151017875" expanded="true" signature="2711:3558" ph="SELECT Movie... Movie" />
+                <marker date="1484151017875" expanded="true" signature="2717:3272" ph="SELECT * FRO... Movie" />
+                <marker date="1484151017875" expanded="true" signature="2717:3558" ph="select Movie... Movie" />
+                <marker date="1484151017875" expanded="true" signature="3573:3613" ph="/*creating t... " />
+                <marker date="1484151017875" expanded="true" signature="3993:4066" ph="..." />
               </folding>
             </state>
           </provider>
@@ -133,8 +134,8 @@
       <file leaf-file-name="FletNix Style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FletNix Style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="50" column="24" lean-forward="true" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
+            <state relative-caret-position="289">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -143,8 +144,8 @@
       <file leaf-file-name="Interstellar.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Interstellar.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="40" column="43" lean-forward="false" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
+            <state relative-caret-position="153">
+              <caret line="9" column="39" lean-forward="false" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -257,13 +258,16 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="C:/xampp/htdocs/FletNix" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/CSS" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="settings.editor.selected.configurable" value="SQL Dialects" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="SQL Server (Microsoft)" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Nathan\Documents\sites\fletnix\CSS" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Nathan\Documents\sites\fletnix" />
     </key>
@@ -347,15 +351,15 @@
       <workItem from="1483972270782" duration="4676000" />
       <workItem from="1483986120987" duration="6000" />
       <workItem from="1483986140694" duration="15679000" />
-      <workItem from="1484061782026" duration="9309000" />
+      <workItem from="1484061782026" duration="10484000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59733000" />
+    <option name="totallyTimeSpent" value="60908000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14498934" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -390,14 +394,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/connection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/search.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -411,13 +407,14 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1484136229460" expanded="true" signature="1125:2187" ph="..." />
-            <marker date="1484136229460" expanded="true" signature="1401:1420" ph="SELECT * FRO... genre" />
-            <marker date="1484136229460" expanded="true" signature="2514:2561" ph="SELECT * FRO... Movie" />
-            <marker date="1484136229460" expanded="true" signature="2711:3186" ph="select Movie... Movie" />
-            <marker date="1484136229460" expanded="true" signature="2711:3187" ph="SELECT * FRO... Movie" />
-            <marker date="1484136229460" expanded="true" signature="3252:3292" ph="/*creating t... " />
-            <marker date="1484136229460" expanded="true" signature="3672:3745" ph="..." />
+            <marker date="1484151017875" expanded="true" signature="1125:2187" ph="..." />
+            <marker date="1484151017875" expanded="true" signature="1401:1420" ph="SELECT * FRO... genre" />
+            <marker date="1484151017875" expanded="true" signature="2514:2561" ph="SELECT * FRO... Movie" />
+            <marker date="1484151017875" expanded="true" signature="2711:3558" ph="SELECT Movie... Movie" />
+            <marker date="1484151017875" expanded="true" signature="2717:3272" ph="SELECT * FRO... Movie" />
+            <marker date="1484151017875" expanded="true" signature="2717:3558" ph="select Movie... Movie" />
+            <marker date="1484151017875" expanded="true" signature="3573:3613" ph="/*creating t... " />
+            <marker date="1484151017875" expanded="true" signature="3993:4066" ph="..." />
           </folding>
         </state>
       </provider>
@@ -503,13 +500,14 @@
         <state relative-caret-position="578">
           <caret line="34" column="38" lean-forward="true" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
           <folding>
-            <marker date="1484136229460" expanded="true" signature="1125:2187" ph="..." />
-            <marker date="1484136229460" expanded="true" signature="1401:1420" ph="SELECT * FRO... genre" />
-            <marker date="1484136229460" expanded="true" signature="2514:2561" ph="SELECT * FRO... Movie" />
-            <marker date="1484136229460" expanded="true" signature="2711:3186" ph="select Movie... Movie" />
-            <marker date="1484136229460" expanded="true" signature="2711:3187" ph="SELECT * FRO... Movie" />
-            <marker date="1484136229460" expanded="true" signature="3252:3292" ph="/*creating t... " />
-            <marker date="1484136229460" expanded="true" signature="3672:3745" ph="..." />
+            <marker date="1484151017875" expanded="true" signature="1125:2187" ph="..." />
+            <marker date="1484151017875" expanded="true" signature="1401:1420" ph="SELECT * FRO... genre" />
+            <marker date="1484151017875" expanded="true" signature="2514:2561" ph="SELECT * FRO... Movie" />
+            <marker date="1484151017875" expanded="true" signature="2711:3558" ph="SELECT Movie... Movie" />
+            <marker date="1484151017875" expanded="true" signature="2717:3272" ph="SELECT * FRO... Movie" />
+            <marker date="1484151017875" expanded="true" signature="2717:3558" ph="select Movie... Movie" />
+            <marker date="1484151017875" expanded="true" signature="3573:3613" ph="/*creating t... " />
+            <marker date="1484151017875" expanded="true" signature="3993:4066" ph="..." />
           </folding>
         </state>
       </provider>
@@ -694,14 +692,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Interstellar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="40" column="43" lean-forward="false" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/search.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -729,7 +719,7 @@
     <entry file="file://$PROJECT_DIR$/watch.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
             <marker date="1484061467352" expanded="true" signature="208:223" ph="SELECT * FRO... MOVIE" />
             <marker date="1484061467352" expanded="true" signature="208:241" ph="SELECT * FRO... MOVIE" />
@@ -752,18 +742,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index_login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="31" lean-forward="false" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
-          <folding>
-            <marker date="1484070499320" expanded="true" signature="1165:1184" ph="SELECT * FRO... Movie" />
-            <marker date="1484070499320" expanded="true" signature="1796:1817" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FletNix Style.css">
+    <entry file="file://$PROJECT_DIR$/CSS/FletNix Style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="50" column="24" lean-forward="true" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
@@ -771,18 +750,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Interstellar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="39" lean-forward="false" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FletNix Style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index_login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="12" column="16" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+          <folding>
+            <marker date="1484070499320" expanded="true" signature="1165:1184" ph="SELECT * FRO... Movie" />
+            <marker date="1484070499320" expanded="true" signature="1796:1817" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/search_login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="128" column="0" lean-forward="true" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+        <state relative-caret-position="595">
+          <caret line="125" column="13" lean-forward="true" selection-start-line="125" selection-start-column="13" selection-end-line="125" selection-end-column="13" />
           <folding>
-            <marker date="1484136229460" expanded="true" signature="1125:2187" ph="..." />
-            <marker date="1484136229460" expanded="true" signature="1401:1420" ph="SELECT * FRO... genre" />
-            <marker date="1484136229460" expanded="true" signature="2514:2561" ph="SELECT * FRO... Movie" />
-            <marker date="1484136229460" expanded="true" signature="2711:3186" ph="select Movie... Movie" />
-            <marker date="1484136229460" expanded="true" signature="2711:3187" ph="SELECT * FRO... Movie" />
-            <marker date="1484136229460" expanded="true" signature="3252:3292" ph="/*creating t... " />
-            <marker date="1484136229460" expanded="true" signature="3672:3745" ph="..." />
+            <marker date="1484151017875" expanded="true" signature="1125:2187" ph="..." />
+            <marker date="1484151017875" expanded="true" signature="1401:1420" ph="SELECT * FRO... genre" />
+            <marker date="1484151017875" expanded="true" signature="2514:2561" ph="SELECT * FRO... Movie" />
+            <marker date="1484151017875" expanded="true" signature="2711:3558" ph="SELECT Movie... Movie" />
+            <marker date="1484151017875" expanded="true" signature="2717:3272" ph="SELECT * FRO... Movie" />
+            <marker date="1484151017875" expanded="true" signature="2717:3558" ph="select Movie... Movie" />
+            <marker date="1484151017875" expanded="true" signature="3573:3613" ph="/*creating t... " />
+            <marker date="1484151017875" expanded="true" signature="3993:4066" ph="..." />
           </folding>
         </state>
       </provider>
