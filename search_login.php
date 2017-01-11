@@ -61,7 +61,6 @@ $keywords = $_GET;
             <select class="searchbox" name="Genre" >
                 <option disabled selected value>Genre</option>
                 <?php
-
                 /*getting all the movie genres*/
                     $query = 'SELECT * FROM genre';
                     executeQuery($query);
@@ -96,19 +95,22 @@ $keywords = $_GET;
 
             <?php
 
-            /*clean the user input */
-            if(isset($_GET['keywords'])) {
+            $searchOptions = array("keywords","Actor","Director","Year","genre");
 
-                $input = str_replace("'", "''", $_GET['keywords']);
-
-                /*create the query*/
-                $query = "SELECT * FROM Movie WHERE title like '%$input%'";
-
+            /*getting the user input and preparing for query*/
+            foreach($searchOptions as $searchOption){
+                if(isset($searchOption)){
+                    /*clean input*/
+                    $searchOption = cleanInput($_GET[$searchOption]);
+                }
+                else{
+                    $searchOption = 'not set';
+                }
             }
-            if(isset($_GET['Actor'])){
 
-                $input = str_replace("'","''", $_GET['Actor']);
-                $query = "  SELECT Movie.movie_id, Movie.title, Movie.duration, Movie.[description], Movie.cover_image, Movie.previous_part, Movie.[URL], Movie.series
+            /*create and execute the query*/
+
+            $query = "  SELECT Movie.movie_id, Movie.title, Movie.duration, Movie.[description], Movie.cover_image, Movie.previous_part, Movie.[URL], Movie.series
                             FROM Movie 
                             LEFT JOIN Movie_genre 
                             ON Movie.movie_id = Movie_genre.movie_id
@@ -120,13 +122,10 @@ $keywords = $_GET;
                             ON Person.person_id = Movie_director.person_id
                             WHERE Movie.movie_id IS NOT NULL
                             ";
-                            
-                
 
-            }
             executeQuery($query);
 
-            /*creating the tumbnail for each movie*/
+            /*creating the thumbnail for each movie*/
             foreach ($data as $row) {
                 echo '<div class="thumbnail">';
 
