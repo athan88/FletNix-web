@@ -11,8 +11,9 @@
 
             $statement = $connection->prepare($query);
             $statement->execute();
-            $data=$statement->fetchAll();
+            $response=$statement->fetchAll();
 
+            return $response;
         }
 
 

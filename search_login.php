@@ -95,11 +95,12 @@ $keywords = $_GET;
 
             <?php
 
+
             $searchOptions = array("keywords","Actor","Director","Year","genre");
 
             /*getting the user input and preparing for query*/
             foreach($searchOptions as $searchOption){
-                if(isset($searchOption)){
+                if(isset($_GET[$searchOption])){
                     /*clean input*/
                     $searchOption = cleanInput($_GET[$searchOption]);
                 }
@@ -110,7 +111,7 @@ $keywords = $_GET;
 
             /*create and execute the query*/
 
-            $query = "  SELECT Movie.movie_id, Movie.title, Movie.duration, Movie.[description], Movie.cover_image, Movie.previous_part, Movie.[URL], Movie.series
+            $query = "  SELECT Movie.movie_id, Movie.title, Movie.duration, Movie.[description], Movie.publication_year, Movie.cover_image, Movie.previous_part, Movie.[URL], Movie.series
                             FROM Movie 
                             LEFT JOIN Movie_genre 
                             ON Movie.movie_id = Movie_genre.movie_id
@@ -123,10 +124,14 @@ $keywords = $_GET;
                             WHERE Movie.movie_id IS NOT NULL
                             ";
 
-            executeQuery($query);
+            if($searchOption[0] != ''){
+                $query .= "AND Movie.title like  '%$searchOption[0]%'";
+            }
+
+            $response = executeQuery($query);
 
             /*creating the thumbnail for each movie*/
-            foreach ($data as $row) {
+            foreach ($response as $row) {
                 echo '<div class="thumbnail">';
 
                 $title = urlencode($row[1]);
