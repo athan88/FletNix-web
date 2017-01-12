@@ -3,12 +3,6 @@
 require 'connection.php';
 include 'phpFunctions.php';
 
-
-$keywords = $_GET;
-
-
-
-
 ?>
 
 
@@ -68,7 +62,7 @@ $keywords = $_GET;
                 <input class="searchbox" type="text" name="Actor" class="textbox" placeholder="Actor">
                 <input class="searchbox" type="text" name="Director" class="textbox" placeholder="Director">
                 <input class="searchbox" type="text" name="Year" class="textbox" placeholder="Year">
-                <input class="searchbox" type="text" name="keywords" class="textbox" placeholder="title">
+                <input class="searchbox" type="text" name="Title" class="textbox" placeholder="title">
                 <input class="searchbox" type="submit" value="search">
 
 
@@ -85,7 +79,7 @@ $keywords = $_GET;
 
             <?php
 
-            $categories =  array("keywords","Actor","Director","Year","Genre");
+            $categories =  array("Title","Actor","Director","Year","Genre");
 
             /*getting the user input and preparing for query*/
             foreach($categories as $category){
@@ -113,11 +107,10 @@ $keywords = $_GET;
                             ";
 
             /*building the final query*/
-            if($searchOptions["keywords"] != 'not set'){
-                $title = $searchOptions["keywords"];
+            if($searchOptions["Title"] != 'not set'){
+                $title = $searchOptions["Title"];
                 $query .= "AND Movie.title like '%$title%'";
             }
-
             if($searchOptions["Genre"] != 'not set'){
                 $genre = $searchOptions["Genre"];
                 $query .= "AND Movie_genre.genre_name like '%$genre%' ";
@@ -129,6 +122,22 @@ $keywords = $_GET;
             if($searchOptions["Director"] != 'not set'){
                 $director = $searchOptions["Director"];
                 $query .= "AND person.firstname like '%$director%' or person.lastname like '%$director%'";
+            }
+            if(!empty($_GET["keywords"])){
+                $keyword = cleanInput($_GET["keywords"]);
+                $query = "SELECT Movie.movie_id, Movie.title, Movie.duration, Movie.[description], Movie.publication_year, Movie.cover_image, Movie.previous_part, Movie.[URL], Movie.series
+                            FROM Movie 
+                            LEFT JOIN Movie_genre 
+                            ON Movie.movie_id = Movie_genre.movie_id
+                            LEFT JOIN Movie_cast
+                            ON Movie_cast.movie_id = Movie.movie_id
+                            LEFT JOIN Person 
+                            ON Person.person_id = Movie_cast.person_id
+                            LEFT JOIN Movie_director 
+                            ON Person.person_id = Movie_director.person_id
+                            WHERE Movie.movie_id IS NOT NULL AND (Movie.title like '%$keyword%' OR Movie_genre.genre_name like '%$keyword%'
+                            OR person.firstname like '%$keyword%' OR person.lastname like '%$keyword%')
+                             ";
             }
 
             /*sending the query*/
@@ -145,6 +154,7 @@ $keywords = $_GET;
 
                 echo '</div>';
             }
+            $connection = null;
             ?>
 
         </div>

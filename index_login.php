@@ -80,6 +80,7 @@
                 }
 
 
+            $connection = null;
             ?>
 
 

@@ -19,6 +19,7 @@
     /*function for cleaning user input*/
     function cleanInput($input){
 
+
         $input = trim($input);
         $input = str_replace("'", "''", $input);
 
