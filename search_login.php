@@ -97,7 +97,6 @@ $keywords = $_GET;
                     $searchOptions[$category] = 'not set';
                 }
             }
-            print_r($searchOptions);
 
             /*create and execute the query*/
             $query = "  SELECT Movie.movie_id, Movie.title, Movie.duration, Movie.[description], Movie.publication_year, Movie.cover_image, Movie.previous_part, Movie.[URL], Movie.series
@@ -120,7 +119,7 @@ $keywords = $_GET;
             }
 
             if($searchOptions["Genre"] != 'not set'){
-                $genre = $searchOptions["Actor"];
+                $genre = $searchOptions["Genre"];
                 $query .= "AND Movie_genre.genre_name like '%$genre%' ";
             }
             if($searchOptions["Year"] != 'not set'){
@@ -131,9 +130,6 @@ $keywords = $_GET;
                 $director = $searchOptions["Director"];
                 $query .= "AND person.firstname like '%$director%' or person.lastname like '%$director%'";
             }
-
-
-            echo "<br> $query";
 
             /*sending the query*/
             $response = executeQuery($query);

@@ -286,7 +286,8 @@ footer a:hover p{
 }
 
 .thumbnail{
-    width:33.33%;
+    width:20%;
+    min-width: 100px;
 }
 
 .thumbnail img{
