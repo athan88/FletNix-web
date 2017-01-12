@@ -63,17 +63,12 @@
             <?php
 
             $query = "SELECT * FROM Movie";
-            $statement = $connection->prepare($query);
-            $statement->execute();
-            $data=$statement->fetchAll();
-
+            $response = executeQuery($query);
 
             /*creating the tumbnail for each movie*/
-
-                foreach ($data as $row) {
+                foreach ($response as $row) {
 
                     echo '<div class="thumbnail">';
-
 
                     $title = urlencode($row[1]);
 

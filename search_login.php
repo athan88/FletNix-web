@@ -63,9 +63,9 @@ $keywords = $_GET;
                 <?php
                 /*getting all the movie genres*/
                     $query = 'SELECT * FROM genre';
-                    executeQuery($query);
+                    $genres = executeQuery($query);
 
-                    foreach($data as $row){
+                    foreach($genres as $row){
                         echo "<option value=".$row[0].">$row[0]</option>";
                     }
                 ?>
@@ -96,21 +96,22 @@ $keywords = $_GET;
             <?php
 
 
-            $searchOptions = array("keywords","Actor","Director","Year","genre");
+
+            $categories =  array("keywords","Actor","Director","Year","genre");
 
             /*getting the user input and preparing for query*/
-            foreach($searchOptions as $searchOption){
-                if(isset($_GET[$searchOption])){
+            foreach($categories as $category){
+                if(isset($_GET["$category"])){
                     /*clean input*/
-                    $searchOption = cleanInput($_GET[$searchOption]);
+                    $searchOptions[$category] = cleanInput($_GET["$category"]);
                 }
                 else{
-                    $searchOption = 'not set';
+                    $searchOptions[$category] = 'not set';
                 }
             }
+            print_r($searchOptions);
 
             /*create and execute the query*/
-
             $query = "  SELECT Movie.movie_id, Movie.title, Movie.duration, Movie.[description], Movie.publication_year, Movie.cover_image, Movie.previous_part, Movie.[URL], Movie.series
                             FROM Movie 
                             LEFT JOIN Movie_genre 
@@ -124,10 +125,22 @@ $keywords = $_GET;
                             WHERE Movie.movie_id IS NOT NULL
                             ";
 
-            if($searchOption[0] != ''){
-                $query .= "AND Movie.title like  '%$searchOption[0]%'";
+
+
+            /*building the final query*/
+            if($searchOptions["keywords"] != 'not set'){
+                $title = $searchOptions["keywords"];
+                $query .= "AND Movie.title like '%$title%'";
             }
 
+            if($searchOptions["Actor"] != 'not set'){
+                $genre = $searchOptions["Actor"];
+                $query .= "AND Movie_genre.genre_name like '%$genre%' ";
+            }
+
+            echo "<br> $query";
+
+            /*sending the query*/
             $response = executeQuery($query);
 
             /*creating the thumbnail for each movie*/

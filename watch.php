@@ -9,7 +9,7 @@
     $name = str_replace("'", "''", $name);
     $query = "SELECT * FROM Movie WHERE title = '$name'";
 
-    executeQuery($query);
+    $data = executeQuery($query);
     $row = $data[0];
     $description = $row[3];
 
@@ -22,7 +22,7 @@
     WHERE $row[0] = Movie.movie_id
     GROUP BY Movie.movie_id";
 
-    executeQuery($query);
+    $data = executeQuery($query);
 
     if (isset($data[0])){
 

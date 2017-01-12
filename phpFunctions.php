@@ -4,10 +4,9 @@
 
 
     /* function for sending queries to the database */
-    $data = NULL;
 
         function executeQuery($query){
-            global $connection, $data;
+            global $connection;
 
             $statement = $connection->prepare($query);
             $statement->execute();
