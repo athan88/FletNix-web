@@ -62,6 +62,7 @@
 
             <?php
 
+            /*getting information about all movies*/
             $query = "SELECT * FROM Movie";
             $response = executeQuery($query);
 

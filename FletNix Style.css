@@ -157,7 +157,8 @@ a.search:hover{
 }
 
 .dropdown-content {
-    display: none;
+    display: block;
+    visibility: hidden;
     margin-top: 100%;
     position: absolute;
 
@@ -185,7 +186,7 @@ a.search:hover{
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+    visibility: visible;
 }
 
 
@@ -497,11 +498,11 @@ footer a:hover p{
     box-sizing: border-box;
     justify-content: center;
     position: absolute;
-    top:7%;
+    top:6%;
 
     /*decoration*/
     background-color: #0f0f0f;
-    border: 4px solid #AACCFF;
+    border: 2px solid #AACCFF;
     border-radius: 2vh;
 
 
@@ -511,6 +512,7 @@ footer a:hover p{
     height: 100%;
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 .searchbox{
@@ -521,6 +523,7 @@ footer a:hover p{
     display: inline-block;
     width: 10%;
     text-align: center;
+    border-radius: 2vh;
 
 
 }

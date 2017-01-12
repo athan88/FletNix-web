@@ -20,7 +20,6 @@ $keywords = $_GET;
     <meta name="viewport" content="width=device-width, initial-scale = 1" >
     <link rel="stylesheet" type="text/css" href="FletNix%20Style.css">
 
-
     <title>FletNix - Search</title>
 
 </head>
@@ -31,16 +30,11 @@ $keywords = $_GET;
 
         <a href="index_login.php" class="logo">FletNix</a>
 
-
         <form class="searchbar" method="get" name="keywords"  action="search_login.php">
 
             <div class="search">
-
-                <input type="text" class="textbox" name="keywords" placeholder="search">
-
             </div>
         </form>
-
 
         <div class="dropdown">
             <img class="dropbtn" src="Images/account.png" alt="Account Button">
@@ -87,21 +81,15 @@ $keywords = $_GET;
 
     <div id="content-search">
 
-
-        <h1>Results</h1>
-
         <div id="thumbnails">
-
 
             <?php
 
-
-
-            $categories =  array("keywords","Actor","Director","Year","genre");
+            $categories =  array("keywords","Actor","Director","Year","Genre");
 
             /*getting the user input and preparing for query*/
             foreach($categories as $category){
-                if(isset($_GET["$category"])){
+                if(!empty($_GET["$category"])){
                     /*clean input*/
                     $searchOptions[$category] = cleanInput($_GET["$category"]);
                 }
@@ -125,18 +113,25 @@ $keywords = $_GET;
                             WHERE Movie.movie_id IS NOT NULL
                             ";
 
-
-
             /*building the final query*/
             if($searchOptions["keywords"] != 'not set'){
                 $title = $searchOptions["keywords"];
                 $query .= "AND Movie.title like '%$title%'";
             }
 
-            if($searchOptions["Actor"] != 'not set'){
+            if($searchOptions["Genre"] != 'not set'){
                 $genre = $searchOptions["Actor"];
                 $query .= "AND Movie_genre.genre_name like '%$genre%' ";
             }
+            if($searchOptions["Year"] != 'not set'){
+                $year = $searchOptions["Year"];
+                $query .= "AND Movie.publication_year = $year";
+            }
+            if($searchOptions["Director"] != 'not set'){
+                $director = $searchOptions["Director"];
+                $query .= "AND person.firstname like '%$director%' or person.lastname like '%$director%'";
+            }
+
 
             echo "<br> $query";
 
@@ -160,11 +155,9 @@ $keywords = $_GET;
 
     </div>
 
-
     <footer>
         <a href="about_login.php"><p>©FletNix 2016</p></a>
     </footer>
-
 
 </body>
 </html>
