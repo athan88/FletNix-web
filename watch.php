@@ -7,7 +7,7 @@
 
     /*getting information about the selected movie*/
     $name = $_GET['name'];
-    $name = str_replace("'", "''", $name);
+    $name = cleanInput($name);
     $query = "SELECT * FROM Movie WHERE title = '$name'";
 
     $data = executeQuery($query);

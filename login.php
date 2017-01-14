@@ -3,8 +3,12 @@
     require 'LoginFunction.php';
     require 'phpFunctions.php';
 
+    $nologindata = false;
+    $incorrectLogindata = false;
+
     if(!empty($_POST['plainPassword']) && !empty($_POST['plainEmailaddress'])){
 
+        /*need to clean input and hash*/
         $hashedPwd = $_POST['plainPassword'];
         $email = $_POST['plainEmailaddress'];
 
@@ -64,6 +68,12 @@
             <form method = "post" action="login.php">
                 <input name="plainEmailaddress" type="text" class="textbox" placeholder="email address">
                 <input name="plainPassword" type="password" class="textbox" placeholder="Password">
+                <?php
+                     if($nologindata){
+                        echo "<h1></h1>";
+                    }
+
+                ?>
 
         </div>
 

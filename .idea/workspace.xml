@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f06cba39-f134-4fd0-bd63-7319e8447527" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LoginFunction.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PHP/Login.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FletNix Style.css" afterPath="$PROJECT_DIR$/FletNix Style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index_login.php" afterPath="$PROJECT_DIR$/index_login.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login.php" afterPath="$PROJECT_DIR$/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phpFunctions.php" afterPath="$PROJECT_DIR$/phpFunctions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/search_login.php" afterPath="$PROJECT_DIR$/search_login.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/watch.php" afterPath="$PROJECT_DIR$/watch.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,8 +29,8 @@
       <file leaf-file-name="index_login.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index_login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="323">
+              <caret line="82" column="0" lean-forward="true" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
               <folding>
                 <marker date="1484403976504" expanded="true" signature="314:1616" ph="..." />
                 <marker date="1484403976504" expanded="true" signature="321:341" ph="..." />
@@ -62,8 +55,8 @@
       <file leaf-file-name="search_login.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/search_login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1105">
-              <caret line="65" column="16" lean-forward="true" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="70" />
+            <state relative-caret-position="1309">
+              <caret line="140" column="13" lean-forward="true" selection-start-line="140" selection-start-column="13" selection-end-line="140" selection-end-column="13" />
               <folding>
                 <marker date="1484300268279" expanded="true" signature="133:354" ph="..." />
                 <marker date="1484300268279" expanded="true" signature="376:1007" ph="..." />
@@ -94,8 +87,8 @@
       <file leaf-file-name="LoginFunction.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LoginFunction.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+            <state relative-caret-position="306">
+              <caret line="18" column="2" lean-forward="true" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
               <folding>
                 <marker date="1484404078349" expanded="true" signature="188:273" ph="SELECT * FRO... Customer" />
                 <marker date="1484404078349" expanded="true" signature="188:275" ph="SELECT * FRO... Customer" />
@@ -109,13 +102,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="login.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state relative-caret-position="323">
+              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding>
-                <marker date="1484404078411" expanded="true" signature="1416:1623" ph="..." />
+                <marker date="1484410614239" expanded="true" signature="1517:1869" ph="..." />
               </folding>
             </state>
           </provider>
@@ -124,18 +117,18 @@
       <file leaf-file-name="watch.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/watch.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            <state relative-caret-position="1785">
+              <caret line="105" column="0" lean-forward="true" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
               <folding>
-                <marker date="1484298438090" expanded="true" signature="241:256" ph="SELECT * FRO... MOVIE" />
-                <marker date="1484298438090" expanded="true" signature="241:274" ph="SELECT * FRO... MOVIE" />
-                <marker date="1484298438090" expanded="true" signature="241:275" ph="SELECT * FRO... MOVIE" />
-                <marker date="1484298438090" expanded="true" signature="241:276" ph="SELECT * FRO... Movie" />
-                <marker date="1484298438090" expanded="true" signature="241:281" ph="SELECT * FRO... MOVIE" />
-                <marker date="1484298438090" expanded="true" signature="241:282" ph="SELECT * FRO... Movie" />
-                <marker date="1484298438090" expanded="true" signature="241:762" ph="SELECT * FRO... MOVIE" />
-                <marker date="1484298438090" expanded="true" signature="417:590" ph="select avg(M... Movie" />
-                <marker date="1484298438090" expanded="true" signature="2008:2021" ph="..." />
+                <marker date="1484410614207" expanded="true" signature="229:244" ph="SELECT * FRO... MOVIE" />
+                <marker date="1484410614207" expanded="true" signature="229:262" ph="SELECT * FRO... MOVIE" />
+                <marker date="1484410614207" expanded="true" signature="229:263" ph="SELECT * FRO... MOVIE" />
+                <marker date="1484410614207" expanded="true" signature="229:264" ph="SELECT * FRO... Movie" />
+                <marker date="1484410614207" expanded="true" signature="229:269" ph="SELECT * FRO... MOVIE" />
+                <marker date="1484410614207" expanded="true" signature="229:270" ph="SELECT * FRO... Movie" />
+                <marker date="1484410614207" expanded="true" signature="229:750" ph="SELECT * FRO... MOVIE" />
+                <marker date="1484410614207" expanded="true" signature="405:578" ph="select avg(M... Movie" />
+                <marker date="1484410614207" expanded="true" signature="1996:2009" ph="..." />
               </folding>
             </state>
           </provider>
@@ -144,8 +137,8 @@
       <file leaf-file-name="phpFunctions.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/phpFunctions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state relative-caret-position="425">
+              <caret line="25" column="2" lean-forward="true" selection-start-line="25" selection-start-column="2" selection-end-line="25" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -161,7 +154,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FletNix Style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FletNix Style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FletNix Style.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="312">
@@ -193,14 +186,15 @@
       <find>searchbox</find>
       <find>textbo</find>
       <find>.dropdown</find>
-      <find>header</find>
       <find>searchboxes</find>
       <find>dropdown</find>
       <find>thumb</find>
       <find>visibil</find>
       <find>login</find>
       <find>login-box form</find>
+      <find>header</find>
       <find>empty</find>
+      <find>favori</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -232,13 +226,13 @@
         <option value="$PROJECT_DIR$/../FletNix_Mattijn/sql/import_movies.php" />
         <option value="$PROJECT_DIR$/PHP/Login.php" />
         <option value="$PROJECT_DIR$/PHP/phpFunctions.php" />
-        <option value="$PROJECT_DIR$/watch.php" />
-        <option value="$PROJECT_DIR$/search_login.php" />
         <option value="$PROJECT_DIR$/phpFunctions.php" />
         <option value="$PROJECT_DIR$/index_login.php" />
-        <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/LoginFunction.php" />
         <option value="$PROJECT_DIR$/FletNix Style.css" />
+        <option value="$PROJECT_DIR$/login.php" />
+        <option value="$PROJECT_DIR$/search_login.php" />
+        <option value="$PROJECT_DIR$/watch.php" />
       </list>
     </option>
   </component>
@@ -385,12 +379,12 @@
       <workItem from="1483972270782" duration="4676000" />
       <workItem from="1483986120987" duration="6000" />
       <workItem from="1483986140694" duration="15679000" />
-      <workItem from="1484061782026" duration="41336000" />
+      <workItem from="1484061782026" duration="43786000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91760000" />
+    <option name="totallyTimeSpent" value="94210000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -424,7 +418,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -763,21 +759,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/watch.php">
+    <entry file="file://$PROJECT_DIR$/FletNix Style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding>
-            <marker date="1484298438090" expanded="true" signature="241:256" ph="SELECT * FRO... MOVIE" />
-            <marker date="1484298438090" expanded="true" signature="241:274" ph="SELECT * FRO... MOVIE" />
-            <marker date="1484298438090" expanded="true" signature="241:275" ph="SELECT * FRO... MOVIE" />
-            <marker date="1484298438090" expanded="true" signature="241:276" ph="SELECT * FRO... Movie" />
-            <marker date="1484298438090" expanded="true" signature="241:281" ph="SELECT * FRO... MOVIE" />
-            <marker date="1484298438090" expanded="true" signature="241:282" ph="SELECT * FRO... Movie" />
-            <marker date="1484298438090" expanded="true" signature="241:762" ph="SELECT * FRO... MOVIE" />
-            <marker date="1484298438090" expanded="true" signature="417:590" ph="select avg(M... Movie" />
-            <marker date="1484298438090" expanded="true" signature="2008:2021" ph="..." />
-          </folding>
+        <state relative-caret-position="312">
+          <caret line="31" column="24" lean-forward="false" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpFunctions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="2" lean-forward="true" selection-start-line="25" selection-start-column="2" selection-end-line="25" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -789,18 +783,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/phpFunctions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/search_login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1105">
-          <caret line="65" column="16" lean-forward="true" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="70" />
+        <state relative-caret-position="1309">
+          <caret line="140" column="13" lean-forward="true" selection-start-line="140" selection-start-column="13" selection-end-line="140" selection-end-column="13" />
           <folding>
             <marker date="1484300268279" expanded="true" signature="133:354" ph="..." />
             <marker date="1484300268279" expanded="true" signature="376:1007" ph="..." />
@@ -827,10 +813,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/LoginFunction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="2" lean-forward="true" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
+          <folding>
+            <marker date="1484404078349" expanded="true" signature="188:273" ph="SELECT * FRO... Customer" />
+            <marker date="1484404078349" expanded="true" signature="188:275" ph="SELECT * FRO... Customer" />
+            <marker date="1484404078349" expanded="true" signature="188:297" ph="SELECT FROM FletNix.dbo.Customer... " />
+            <marker date="1484404078349" expanded="true" signature="188:298" ph="SELECT custo... Customer" />
+            <marker date="1484404078349" expanded="true" signature="188:299" ph="SELECT * FRO... Customer" />
+            <marker date="1484404078349" expanded="true" signature="188:308" ph="SELECT custo... Customer" />
+            <marker date="1484404078349" expanded="true" signature="188:309" ph="SELECT custo... Customer" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index_login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="323">
+          <caret line="82" column="0" lean-forward="true" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
           <folding>
             <marker date="1484403976504" expanded="true" signature="314:1616" ph="..." />
             <marker date="1484403976504" expanded="true" signature="321:341" ph="..." />
@@ -851,37 +853,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/watch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1785">
+          <caret line="105" column="0" lean-forward="true" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+          <folding>
+            <marker date="1484410614207" expanded="true" signature="229:244" ph="SELECT * FRO... MOVIE" />
+            <marker date="1484410614207" expanded="true" signature="229:262" ph="SELECT * FRO... MOVIE" />
+            <marker date="1484410614207" expanded="true" signature="229:263" ph="SELECT * FRO... MOVIE" />
+            <marker date="1484410614207" expanded="true" signature="229:264" ph="SELECT * FRO... Movie" />
+            <marker date="1484410614207" expanded="true" signature="229:269" ph="SELECT * FRO... MOVIE" />
+            <marker date="1484410614207" expanded="true" signature="229:270" ph="SELECT * FRO... Movie" />
+            <marker date="1484410614207" expanded="true" signature="229:750" ph="SELECT * FRO... MOVIE" />
+            <marker date="1484410614207" expanded="true" signature="405:578" ph="select avg(M... Movie" />
+            <marker date="1484410614207" expanded="true" signature="1996:2009" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state relative-caret-position="323">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
-            <marker date="1484404078411" expanded="true" signature="1416:1623" ph="..." />
+            <marker date="1484410614239" expanded="true" signature="1517:1869" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LoginFunction.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding>
-            <marker date="1484404078349" expanded="true" signature="188:273" ph="SELECT * FRO... Customer" />
-            <marker date="1484404078349" expanded="true" signature="188:275" ph="SELECT * FRO... Customer" />
-            <marker date="1484404078349" expanded="true" signature="188:297" ph="SELECT FROM FletNix.dbo.Customer... " />
-            <marker date="1484404078349" expanded="true" signature="188:298" ph="SELECT custo... Customer" />
-            <marker date="1484404078349" expanded="true" signature="188:299" ph="SELECT * FRO... Customer" />
-            <marker date="1484404078349" expanded="true" signature="188:308" ph="SELECT custo... Customer" />
-            <marker date="1484404078349" expanded="true" signature="188:309" ph="SELECT custo... Customer" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FletNix Style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="31" column="24" lean-forward="false" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
