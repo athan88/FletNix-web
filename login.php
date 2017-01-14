@@ -1,3 +1,24 @@
+<?php
+
+    require 'LoginFunction.php';
+    require 'phpFunctions.php';
+
+    if(!empty($_POST['plainPassword']) && !empty($_POST['plainEmailaddress'])){
+
+        $hashedPwd = $_POST['plainPassword'];
+        $email = $_POST['plainEmailaddress'];
+
+        if(checkCredentials($hashedPwd, $email)){
+            header("location: index_login.php");
+        }else{
+            $incorrectLogindata = true;
+        }
+
+    }else{
+       $nologindata = true;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,14 +38,9 @@
 <header>
 
     <a href="index.php" class="logo">FletNix</a>
-
-
     <form class="searchbar" action="search_login.php">
-
         <div class="search">
-
             <input type="text" class="textbox" placeholder="Search...">
-
         </div>
     </form>
 
@@ -36,12 +52,7 @@
         </div>
     </div>
 
-
-
-
 </header>
-
-
 
 <div id="content">
 
@@ -50,31 +61,23 @@
         <h1>Please Login</h1>
 
         <div id="login-box">
-
-            <form>
-                <input type="text" class="textbox" placeholder="Username">
-                <input type="password" class="textbox" placeholder="Password">
-            </form>
-
-
+            <form method = "post" action="login.php">
+                <input name="plainEmailaddress" type="text" class="textbox" placeholder="email address">
+                <input name="plainPassword" type="password" class="textbox" placeholder="Password">
 
         </div>
 
         <div id="Login-buttons">
-
             <ol>
-
-                <li><a href="index_login.php">Login</a></li>
-
+                <li><input type="submit" value="Login"></li>
             </ol>
             <ol>
-
                 <li><a href="create-account.php">Create Account</a></li>
-
             </ol>
 
         </div>
 
+        </form>
     </div>
 
 </div>

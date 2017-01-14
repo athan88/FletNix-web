@@ -1,7 +1,8 @@
 <?php
 
     require 'connection.php';
-    include 'phpFunctions.php';
+    require 'phpFunctions.php';
+    require 'LoginFunction.php';
 
 
     /*getting information about the selected movie*/

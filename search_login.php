@@ -1,7 +1,7 @@
 <?php
-
-require 'connection.php';
+include 'connection.php';
 include 'phpFunctions.php';
+include 'LoginFunction.php';
 
 ?>
 
