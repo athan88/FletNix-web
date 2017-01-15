@@ -1,3 +1,20 @@
+<?php
+
+require "connection.php";
+require "phpFunctions.php";
+require "LoginFunction.php";
+
+/*testing if the user is logged in*/
+if(empty($_SESSION['email'])) {
+    header("location: login.php");
+    die();
+}
+print_r ($_SESSION['email']);
+
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

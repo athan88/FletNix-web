@@ -1,9 +1,16 @@
 <?php
 
-    require 'connection.php';
-    include 'phpFunctions.php';
+require "connection.php";
+require "phpFunctions.php";
+require "LoginFunction.php";
+
+session_destroy();
 
 ?>
+
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,84 +21,83 @@
     <link rel="stylesheet" type="text/css" href="FletNix%20Style.css">
 
 
-    <title>FletNix - Overview</title>
+    <title>FletNix</title>
 
 </head>
 
 
 <body>
 
-    <header>
+<header>
 
-        <a href="index.html" class="logo">FletNix</a>
-
-
-        <form class="searchbar" action="search.php">
-
-            <div class="search">
-
-                <input type="text" class="textbox" placeholder="Search...">
-
-            </div>
-        </form>
-
-        <div class="dropdown">
-            <img class="dropbtn" src="Images/account-no-login.png" alt="Account Button">
-            <div class="dropdown-content">
-                <a href="login.php">Log in</a>
-                <a href="about.php">About Us</a>
-            </div>
-        </div>
+    <a href="index_login.php" class="logo">FletNix</a>
 
 
+    <form class="searchbar" method="get" action="search.php">
 
+        <div class="search">
 
-    </header>
-
-
-
-    <div id="content">
-
-        <div id="thumbnails">
-
-            <?php
-
-            $query = "SELECT * FROM Movie";
-            $statement = $connection->prepare($query);
-            $statement->execute();
-            $data=$statement->fetchAll();
-
-
-            /*creating the tumbnail for each movie*/
-
-            foreach ($data as $row) {
-
-                echo '<div class="thumbnail">';
-
-
-                $title = urlencode($row[1]);
-
-                echo "<a href=\"".'watch.php?name='.$title."\" >";
-                echo "<img src= \"".$row[5]."\" alt=\"".$row[1]."\" > </a>";
-
-                echo '</div>';
-            }
-
-
-
-            ?>
+            <input type="text" class="textbox" name="keywords" placeholder="Search...">
 
         </div>
+    </form>
 
-
-
+    <div class="dropdown">
+        <img class="dropbtn" src="Images/account-no-login.png" alt="Account Button">
+        <div class="dropdown-content">
+            <a href="login.php">Log In</a>
+            <a href="about.php">About Us</a>
         </div>
+    </div>
 
 
 
-        <footer>
-        <a href="about.php"><p>©FletNix 2016</p></a>
-    </footer>
+
+</header>
+
+
+
+<div id="content">
+
+    <div id="thumbnails">
+
+        <?php
+
+        /*getting information about all movies*/
+        $query = "SELECT * FROM Movie";
+        $response = executeQuery($query);
+
+        /*creating the tumbnail for each movie*/
+        foreach ($response as $row) {
+
+            echo '<div class="thumbnail">';
+
+            $title = urlencode($row[1]);
+
+            echo "<a href=\"".'watch.php?name='.$title."\" >";
+            echo "<img src= \"".$row[5]."\" alt=\"".$row[1]."\" > </a>";
+
+            echo '</div>';
+        }
+
+
+        $connection = null;
+        ?>
+
+
+
+
+    </div>
+
+
+
+</div>
+
+
+
+<footer>
+    <a href="about_login.php"><p>©FletNix 2016</p></a>
+</footer>
 
 
 </body>

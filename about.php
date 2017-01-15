@@ -19,16 +19,14 @@
     <a href="index.php" class="logo">FletNix</a>
 
 
-    <form action="search.php">
+    <form class="searchbar" method="get" action="search.php">
 
         <div class="search">
 
-            <input type="text" class="textbox" placeholder="Search...">
-            <input type="submit" class ="button" value="GO" >
+            <input  type="text" class="textbox" placeholder="Search...">
 
         </div>
     </form>
-
 
 
     <div class="dropdown">

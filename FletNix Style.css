@@ -367,6 +367,16 @@ footer a:hover p{
 
 
 }
+#content-video img{
+
+    width: 25%;
+    height: auto;
+
+}
+.nologin{
+    width: 75%;
+    display: inline-block;
+}
 
 #video-info{
 
@@ -614,7 +624,6 @@ footer a:hover p{
     Width: 60%;
     Height: 60%;
     margin: 10vh auto 2vh auto;
-    padding-top: 4%;
 
     /*decoration*/
     display: block;
@@ -675,10 +684,36 @@ footer a:hover p{
 
 }
 #Login-buttons a:hover{
-    text-shadow: 0 0 1.8vw #CAECFF; ;
+    text-shadow: 0 0 1.8vw #CAECFF;
 
 }
+#Login-buttons input{
+    
+    text-decoration: none;
+    text-align: center;
+    display:block;
+    width:75%;
+    border: 2px solid #AACCFF;
+    border-radius: 2vh;
+    color: #AACCFF;
+    background: #0f0f0f;
+}
+#Login-buttons input:hover{
+    text-shadow: 0 0 1.8vw #CAECFF;
+}
+#alertbox{
 
+    display: inline-block;
+    height: 5%;
+    width: 100%;
+
+}
+#alertbox p{
+
+    color: red;
+    text-align: center;
+    margin: 0;
+}
 
 
 

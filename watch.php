@@ -59,10 +59,22 @@
 
 <header>
 
-    <a href="index_login.php" class="logo">FletNix</a>
+    <?php
+        if(empty($_SESSION['email'])){
+            echo "<a href=\"index.php\" class=\"logo\">FletNix</a>";
+        } else {
+            echo "<a href=\"index_login.php\" class=\"logo\">FletNix</a>";
+        }
+    ?>
 
+    <form class="searchbar" action=<?php
+        if(empty($_SESSION['email'])) {
+            echo "search_login.php";
+        }else{
+            echo "search.php";
+        }
 
-    <form class="searchbar" action="search_login.php">
+        ?>>
 
         <div class="search">
 
@@ -73,14 +85,27 @@
     </form>
 
 
-
-
     <div class="dropdown">
-        <img class="dropbtn" src="Images/account.png" alt="Account Button">
+        <?php
+        if(empty($_SESSION['email'])){
+            echo "<img class=\"dropbtn\" src=\"Images/account-no-login.png\" alt=\"Account Button\">";
+        } else {
+            echo "<img class=\"dropbtn\" src=\"Images/account.png\" alt=\"Account Button\">";
+        }
+        ?>
+
         <div class="dropdown-content">
-            <a href="#">Favorites</a>
-            <a href="account_login.php">Acount Details</a>
-            <a href="index.php">Log Off</a>
+            <?php
+            if(empty($_SESSION['email'])){
+                echo "<a href=\"login.php\">Log in</a>";
+                echo "<a href=\"about.php\">About Us</a>";
+            } else {
+                echo "<a href=\"#\">Favorites</a>";
+                echo "<a href=\"about_login.php\">About Us</a>";
+                echo "<a href=\"account_login.php\">Acount Details</a>";
+                echo "<a href=\"login.php?loggedout=true\">Log Off</a>";
+            }
+            ?>
         </div>
     </div>
 
@@ -91,15 +116,31 @@
 <div id="content-video">
 
 
-    <div class="videoWrapper">
+        <?php
 
-        <iframe width="560" height="315" src="<?php echo $row[7] ?>" allowfullscreen></iframe>
+        if(empty($_SESSION['email'])){
 
-    </div>
+            echo "<img src= \"".$row[5]."\" alt=\"".$row[1]."\" >";
+            echo "<div class=\"nologin\"><h1>Please<a href=\"login.php\">login</a></h1></div>";
+
+        } else {
+            echo "<div class=\"videoWrapper\">";
+            echo "<iframe width=\"560\" height=\"315\" src=\"$row[7]\" allowfullscreen></iframe>";
+            echo "</div>";
+        }
+
+        ?>
+
 
     <div id="video-info">
 
-        <a href="#">Add to Favorites</a>
+       <?php
+       if(!empty($_SESSION['email'])){
+
+           echo "<a href=\"#\">Add to Favorites</a> ?>";
+
+       }
+       ?>
         <h1><?php echo $row[1] ?></h1>
         <p>Rating:<?php echo "$rating[0]";?>/5</p>
 

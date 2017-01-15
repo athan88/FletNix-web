@@ -3,6 +3,9 @@
     require 'LoginFunction.php';
     require 'phpFunctions.php';
 
+    /*checking if the user just logged out*/
+    if (isset($_GET['loggedout'])){session_destroy();}
+
     $nologindata = false;
     $incorrectLogindata = false;
 
@@ -44,7 +47,7 @@
 <header>
 
     <a href="index.php" class="logo">FletNix</a>
-    <form class="searchbar" action="search_login.php">
+    <form class="searchbar" action="search.php">
         <div class="search">
             <input type="text" class="textbox" placeholder="Search...">
         </div>
@@ -68,14 +71,19 @@
 
         <div id="login-box">
             <form method = "post" action="login.php">
-                <input name="plainEmailaddress" type="text" class="textbox" placeholder="email address">
-                <input name="plainPassword" type="password" class="textbox" placeholder="Password">
-                <?php
-                     if($nologindata){
-                        echo "<h1></h1>";
+                <div id="alertbox">
+                    <?php
+                    if($nologindata){
+                        echo "<p>please enter your data</p>";
+                    }
+                    if($incorrectLogindata){
+                        echo "<p>Incorrect login data</p>";
                     }
 
-                ?>
+                    ?>
+                </div>
+                <input name="plainEmailaddress" type="text" class="textbox" placeholder="email address">
+                <input name="plainPassword" type="password" class="textbox" placeholder="Password">
 
         </div>
 
