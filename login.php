@@ -6,13 +6,15 @@
     $nologindata = false;
     $incorrectLogindata = false;
 
+    /*checking the login data if entered*/
     if(!empty($_POST['plainPassword']) && !empty($_POST['plainEmailaddress'])){
 
-        /*need to clean input and hash*/
-        $hashedPwd = $_POST['plainPassword'];
-        $email = $_POST['plainEmailaddress'];
+        /*clean input */
+        $cleanedPwd = cleanInput($_POST['plainPassword']);
+        $cleanedEmail = cleanInput($_POST['plainEmailaddress']);
 
-        if(checkCredentials($hashedPwd, $email)){
+        /*check the input*/
+        if(checkCredentials($cleanedPwd, $cleanedEmail)){
             header("location: index_login.php");
         }else{
             $incorrectLogindata = true;

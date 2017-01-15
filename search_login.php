@@ -3,6 +3,12 @@ include 'connection.php';
 include 'phpFunctions.php';
 include 'LoginFunction.php';
 
+    /*testing if the user is logged in*/
+    if(empty($_SESSION['email'])) {
+        header("location: login.php");
+        die();
+    }
+    print_r ($_SESSION['email']);
 ?>
 
 
