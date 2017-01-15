@@ -371,11 +371,15 @@ footer a:hover p{
 
     width: 25%;
     height: auto;
+    border-radius: 2vh;
 
 }
-.nologin{
-    width: 75%;
+.nologin {
+    width: 63%;
+    position: absolute;
+    top: 8vh;
     display: inline-block;
+    text-align: center;
 }
 
 #video-info{

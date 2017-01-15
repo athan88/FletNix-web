@@ -121,7 +121,7 @@
         if(empty($_SESSION['email'])){
 
             echo "<img src= \"".$row[5]."\" alt=\"".$row[1]."\" >";
-            echo "<div class=\"nologin\"><h1>Please<a href=\"login.php\">login</a></h1></div>";
+            echo "<div class=\"nologin\"><h1>Please login to view this content</h1></div>";
 
         } else {
             echo "<div class=\"videoWrapper\">";
@@ -137,7 +137,7 @@
        <?php
        if(!empty($_SESSION['email'])){
 
-           echo "<a href=\"#\">Add to Favorites</a> ?>";
+           echo "<a href=\"#\">Add to Favorites</a>";
 
        }
        ?>

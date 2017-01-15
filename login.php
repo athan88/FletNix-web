@@ -47,9 +47,13 @@
 <header>
 
     <a href="index.php" class="logo">FletNix</a>
-    <form class="searchbar" action="search.php">
+
+    <form class="searchbar" method="get" action="search.php">
+
         <div class="search">
-            <input type="text" class="textbox" placeholder="Search...">
+
+            <input type="text" class="textbox" name="keywords" placeholder="Search...">
+
         </div>
     </form>
 

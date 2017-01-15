@@ -26,9 +26,9 @@ session_destroy();
 
 <header>
 
-    <a href="index_login.php" class="logo">FletNix</a>
+    <a href="index.php" class="logo">FletNix</a>
 
-    <form class="searchbar" method="get" name="keywords"  action="search_login.php">
+    <form class="searchbar" method="get" name="keywords"  action="search.php">
 
         <div class="search">
         </div>
@@ -46,7 +46,7 @@ session_destroy();
 
 <div id="searchboxes">
 
-    <form method="get" action="search_login.php">
+    <form method="get" action="search.php">
 
         <select class="searchbox" name="Genre" >
             <option disabled selected value>Genre</option>

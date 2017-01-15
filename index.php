@@ -96,7 +96,7 @@ session_destroy();
 
 
 <footer>
-    <a href="about_login.php"><p>©FletNix 2016</p></a>
+    <a href="about.php"><p>©FletNix 2016</p></a>
 </footer>
 
 
