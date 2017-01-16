@@ -12,7 +12,7 @@ function NewUser()
     $data = ($query) or die();
     if($data)
     {
-        echo "Your registration is complete!"
+        echo "Your registration is complete!";
     }
 
 }
