@@ -8,8 +8,13 @@
             global $connection;
 
             $statement = $connection->prepare($query);
-            $statement->execute();
-            $response=$statement->fetchAll();
+
+            try{
+                $statement->execute();
+                $response=$statement->fetchAll();
+            }catch (Exception $e){
+                return $statement->rowCount();
+            }
 
             return $response;
         }

@@ -20,6 +20,15 @@ if (!empty($_GET['new'])){
     echo $query;
     executeQuery($query);
 }
+/*testing if the user wants to remove a movie*/
+if (!empty($_GET['remove'])){
+    $emailadres = $_SESSION['email'];
+    $newmovieId = $_GET['remove'];
+
+    $query = "DELETE FROM Favorites WHERE  customer_mail_adres = '$emailadres' AND movie_id = $newmovieId";
+    echo $query;
+    executeQuery($query);
+}
 
 ?>
 

@@ -100,7 +100,7 @@
                 echo "<a href=\"login.php\">Log in</a>";
                 echo "<a href=\"about.php\">About Us</a>";
             } else {
-                echo "<a href=\"#\">Favorites</a>";
+                echo  "<a href=\"Favorites.php\">Favorites</a>";
                 echo "<a href=\"about_login.php\">About Us</a>";
                 echo "<a href=\"account_login.php\">Acount Details</a>";
                 echo "<a href=\"login.php?loggedout=true\">Log Off</a>";
@@ -138,16 +138,18 @@
        /*favorite button*/
        if(!empty($_SESSION['email'])){
 
+           $email = $_SESSION['email'];
            /*checking if the movie is already favorited*/
-           $response = executeQuery('');
+           $response = executeQuery("SELECT * FROM Favorites WHERE customer_mail_adres = '$email' AND movie_id = '$row[0]'");
 
-           if (isset()){
-
-
-           }
            $movieId = urlencode($row[0]);
 
-           echo "<a href=\"Favorites.php?new=$movieId\">Add to Favorites</a>";
+           if (!empty($response[0])){
+               echo "<a href=\"Favorites.php?remove=$movieId\">Remove from your Favorites</a>";
+           }else{
+               echo "<a href=\"Favorites.php?new=$movieId\">Add to Favorites</a>";
+           }
+
 
        }
        ?>
