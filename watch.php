@@ -4,7 +4,6 @@
     require 'phpFunctions.php';
     require 'LoginFunction.php';
 
-
     /*getting information about the selected movie*/
     $name = $_GET['name'];
     $name = cleanInput($name);
@@ -13,7 +12,6 @@
     $data = executeQuery($query);
     $row = $data[0];
     $description = $row[3];
-
 
     /*getting the rating*/
     $query = "
@@ -34,9 +32,6 @@
         $rating = 'N';
 
     }
-
-
-
 
 ?>
 
@@ -145,7 +140,9 @@
            $movieId = urlencode($row[0]);
 
            if (!empty($response[0])){
+               echo "<form>";
                echo "<a href=\"Favorites.php?remove=$movieId\">Remove from your Favorites</a>";
+               echo "</form>";
            }else{
                echo "<a href=\"Favorites.php?new=$movieId\">Add to Favorites</a>";
            }
@@ -155,6 +152,13 @@
        ?>
         <h1><?php echo $row[1] ?></h1>
         <p>Rating:<?php echo "$rating[0]";?>/5</p>
+        <form>
+            <input type = "radio" name = "rating"  value="1">
+            <input type = "radio" name = "rating"  value="2">
+            <input type = "radio" name = "rating"  value="3">
+            <input type = "radio" name = "rating"  value="4">
+            <input type = "radio" name = "rating"  value="5">
+        </form>
 
 
     </div>
