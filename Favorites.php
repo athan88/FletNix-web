@@ -13,8 +13,8 @@ if(empty($_SESSION['email'])) {
 
 /*testing if the user wants to add a new movie*/
 if (!empty($_GET['new'])){
-    $emailadres = $_SESSION['email'];
-    $newmovieId = $_GET['new'];
+    $emailadres = cleanInput( $_SESSION['email']);
+    $newmovieId = cleanInput($_GET['new']);
 
     $query = "INSERT INTO Favorites VALUES ('$emailadres', $newmovieId)";
     echo $query;
@@ -22,8 +22,8 @@ if (!empty($_GET['new'])){
 }
 /*testing if the user wants to remove a movie*/
 if (!empty($_GET['remove'])){
-    $emailadres = $_SESSION['email'];
-    $newmovieId = $_GET['remove'];
+    $emailadres = cleanInput($_SESSION['email']);
+    $newmovieId = cleanInput($_GET['remove']);
 
     $query = "DELETE FROM Favorites WHERE  customer_mail_adres = '$emailadres' AND movie_id = $newmovieId";
     echo $query;
