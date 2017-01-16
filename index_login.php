@@ -50,7 +50,7 @@
         <div class="dropdown">
             <img class="dropbtn" src="Images/account.png" alt="Account Button">
             <div class="dropdown-content">
-                <a href="#">Favorites</a>
+                <a href="Favorites.php">Favorites</a>
                 <a href="account_login.php">Acount Details</a>
                 <a href="about_login.php">About Us</a>
                 <a href="login.php?loggedout=true">Log Off</a>

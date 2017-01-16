@@ -135,9 +135,19 @@
     <div id="video-info">
 
        <?php
+       /*favorite button*/
        if(!empty($_SESSION['email'])){
 
-           echo "<a href=\"#\">Add to Favorites</a>";
+           /*checking if the movie is already favorited*/
+           $response = executeQuery('');
+
+           if (isset()){
+
+
+           }
+           $movieId = urlencode($row[0]);
+
+           echo "<a href=\"Favorites.php?new=$movieId\">Add to Favorites</a>";
 
        }
        ?>
