@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f06cba39-f134-4fd0-bd63-7319e8447527" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/creatuser.php" afterPath="$PROJECT_DIR$/creatuser.php" />
-    </list>
+    <list default="true" id="f06cba39-f134-4fd0-bd63-7319e8447527" name="Default" comment="" />
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -402,12 +399,12 @@
       <workItem from="1484485271527" duration="11784000" />
       <workItem from="1484567263880" duration="6437000" />
       <workItem from="1484576540319" duration="2850000" />
-      <workItem from="1484593256978" duration="5895000" />
+      <workItem from="1484593256978" duration="5964000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123716000" />
+    <option name="totallyTimeSpent" value="123785000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
