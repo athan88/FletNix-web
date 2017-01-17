@@ -61,24 +61,13 @@
         <div id="login-box">
             <form action = "login.php" method="post">
                 <div id="alertbox">
-                    <?php
-                    /*
-                    if($nologindata){
-                        echo "<p>please enter your data</p>";
-                    }else
-                    if($incorrectLogindata){
-                        echo "<p>Incorrect login data</p>";
-                    }else
-                    */
-
-                    ?>
                 </div>
                     <input type="text" class="textbox" name="firstname" placeholder="First name">
                     <input type="text" class="textbox" name="lastname" placeholder="Last name">
-                    <input type="text" class="textbox" name="email" placeholder="Email-adress">
-                    <input type="password" class="textbox" name="plainpassword" placeholder="Password">
+                    <input type="text" class="textbox" name="createemail" placeholder="Email-adress">
+                    <input type="password" class="textbox" name="createpassword" placeholder="Password">
                     <input type="password" class="textbox" name="confirmpassword" placeholder="Confirm password">
-                    <select name="Genre" >
+                    <select name="subscription" >
                         <option disabled selected value>Subscription</option>
                         <option>Basic</option>
                         <option>Premium</option>

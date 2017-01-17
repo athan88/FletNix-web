@@ -3,29 +3,75 @@
     require 'LoginFunction.php';
     require 'phpFunctions.php';
 
-    /*checking if the user just logged out*/
-    if (isset($_GET['loggedout'])){session_destroy();}
+    /*
+     *
+     *
+     * Checking login data
+     *
+     *
+     */
 
-    $nologindata = false;
-    $incorrectLogindata = false;
+        /*checking if the user just logged out*/
+        if (isset($_GET['loggedout'])){session_destroy();}
 
-    /*checking the login data if entered*/
-    if(!empty($_POST['plainPassword']) && !empty($_POST['plainEmailaddress'])){
+        $nologindata = false;
+        $incorrectLogindata = false;
 
-        /*clean input */
-        $cleanedPwd = cleanInput($_POST['plainPassword']);
-        $cleanedEmail = cleanInput($_POST['plainEmailaddress']);
+        /*checking the login data if entered*/
+        if(!empty($_POST['plainPassword']) && !empty($_POST['plainEmailaddress'])){
 
-        /*check the input*/
-        if(checkCredentials($cleanedPwd, $cleanedEmail)){
-            header("location: index_login.php");
+            /*clean input */
+            $cleanedPwd = cleanInput($_POST['plainPassword']);
+            $cleanedEmail = cleanInput($_POST['plainEmailaddress']);
+
+            /*check the input*/
+            if(checkCredentials($cleanedPwd, $cleanedEmail)){
+                header("location: index_login.php");
+            }else{
+                $incorrectLogindata = true;
+            }
+
         }else{
-            $incorrectLogindata = true;
+           $nologindata = true;
         }
 
-    }else{
-       $nologindata = true;
+    /*
+     *
+     * Creating new accounts
+     *
+     */
+
+    /*form validation*/
+    if(!empty($_POST['firstname']) && !empty($_POST['lastname']) && !empty($_POST['createemail']) && !empty($_POST['createpassword']) && !empty($_POST['confirmpassword'])){
+
+        /*getting the data*/
+        $userdata = array(
+            cleanInput($_POST['firstname']),
+            cleanInput($_POST['lastname']),
+            cleanInput($_POST['createemail']),
+            cleanInput($_POST['createpassword']),
+            cleanInput($_POST['confirmpassword']),
+            cleanInput($_POST['subscription'])
+
+        );
+        $errormessage = createAccount($userdata);
     }
+
+if (empty($_POST['firstname']) or
+    empty($_POST['lastname']) or
+    empty($_POST['createemail']) or
+    empty($_POST['createpassword']) or
+    empty($_POST['confirmpassword'])){
+    $errormessage = "Account creation failed: please fill in all fields";
+}
+
+    /*actually creating an account*/
+
+
+
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -77,12 +123,17 @@
             <form method = "post" action="login.php">
                 <div id="alertbox">
                     <?php
-                    if($nologindata){
-                        echo "<p>please enter your data</p>";
+                    if(isset($errormessage)){
+                        echo "<p>$errormessage</p>";
+                    }else{
+                        if($nologindata){
+                            echo "<p>please enter your data</p>";
+                        }
+                        if($incorrectLogindata){
+                            echo "<p>Incorrect login data</p>";
+                        }
                     }
-                    if($incorrectLogindata){
-                        echo "<p>Incorrect login data</p>";
-                    }
+
 
                     ?>
                 </div>
