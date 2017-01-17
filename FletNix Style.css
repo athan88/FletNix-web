@@ -374,6 +374,9 @@ footer a:hover p{
     border-radius: 2vh;
 
 }
+#content-video .searchbox{
+    float: right;
+}
 .nologin {
     width: 63%;
     position: absolute;
@@ -471,6 +474,7 @@ footer a:hover p{
     float:Right;
     margin: .5% 0 .5% 0;
     text-align: right;
+    text-decoration: none;
 }
 #account-container table{
     color: #FFFFFF;
@@ -490,10 +494,6 @@ footer a:hover p{
 #account-container th{
     color: #AACCFF;
 
-}
-#account-container a{
-    text-decoration: none;
-    float: none;
 }
 #account-container a:visited{
     color: #AACCFF;
@@ -614,9 +614,10 @@ footer a:hover p{
 
 #Login-Container p{
     width: 100%;
-    font-size: 2vh;
+    font-size: 4vh;
     margin: .5% 0 .5% 3%;
     display: inline-block;
+    color: #FFFFFF;
 }
 #Login-Container h1{
     margin-top: .5%;
@@ -643,7 +644,14 @@ footer a:hover p{
     height: 30%;
     width: 60%;
     font-size: 4vh;
-    margin: 0 20% 5% 20%;
+    margin: 0 20% 2% 20%;
+    text-align: center;
+}
+#login-box form select{
+    height: 30%;
+    width: 60%;
+    font-size: 4vh;
+    margin: 0 20% 2% 20%;
     text-align: center;
 }
 #Login-buttons{

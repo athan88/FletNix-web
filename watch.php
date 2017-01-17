@@ -62,18 +62,18 @@
         }
     ?>
 
-    <form class="searchbar" action=<?php
-        if(empty($_SESSION['email'])) {
+    <form class="searchbar" method="get" action=<?php
+        if(!empty($_SESSION['email'])) {
             echo "search_login.php";
         }else{
             echo "search.php";
         }
 
-        ?>>
+        ?>  >
 
         <div class="search">
 
-            <input type="text" class="textbox" placeholder="Search...">
+            <input type="text" class="textbox" name="keywords" placeholder="Search...">
 
 
         </div>
@@ -152,12 +152,13 @@
        ?>
         <h1><?php echo $row[1] ?></h1>
         <p>Rating:<?php echo "$rating[0]";?>/5</p>
-        <form>
+        <form method="post" action="watch.php?name=<?php $encodedname = urlencode($name); echo $encodedname?>">
             <input type = "radio" name = "rating"  value="1">
             <input type = "radio" name = "rating"  value="2">
             <input type = "radio" name = "rating"  value="3">
             <input type = "radio" name = "rating"  value="4">
             <input type = "radio" name = "rating"  value="5">
+            <input class="searchbox" type="submit" value="rate">
         </form>
 
 

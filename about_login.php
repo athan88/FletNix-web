@@ -35,11 +35,11 @@ if(empty($_SESSION['email'])) {
     <a href="index_login.php" class="logo">FletNix</a>
 
 
-    <form class="searchbar" action="search_login.php">
+    <form class="searchbar" method="get" action="search_login.php">
 
         <div class="search">
 
-            <input type="text" class="textbox" placeholder="Search...">
+            <input type="text" class="textbox" name="keywords" placeholder="Search...">
 
         </div>
     </form>

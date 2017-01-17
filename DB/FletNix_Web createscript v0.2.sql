@@ -130,7 +130,6 @@ create table Customer
 	paypal_account varchar(255) NOT NULL,
 	subscription_start date NOT NULL,
 	subscription_end date NULL,
-	[username] varchar(25) NOT NULL,
 	[password] varchar(255) NOT NULL, 
 
 		--creating constriants

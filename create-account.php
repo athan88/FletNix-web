@@ -1,3 +1,12 @@
+<?php
+
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,31 +59,47 @@
         <h1>Create Account</h1>
 
         <div id="login-box">
+            <form action = "login.php" method="post">
+                <div id="alertbox">
+                    <?php
+                    /*
+                    if($nologindata){
+                        echo "<p>please enter your data</p>";
+                    }else
+                    if($incorrectLogindata){
+                        echo "<p>Incorrect login data</p>";
+                    }else
+                    */
 
-            <form>
-                <input type="text" class="textbox" placeholder="Full name">
-                <input type="text" class="textbox" placeholder="Email-adress">
-                <input type="text" class="textbox" placeholder="Username">
-                <input type="password" class="textbox" placeholder="Password">
-            </form>
+                    ?>
+                </div>
+                    <input type="text" class="textbox" name="firstname" placeholder="First name">
+                    <input type="text" class="textbox" name="lastname" placeholder="Last name">
+                    <input type="text" class="textbox" name="email" placeholder="Email-adress">
+                    <input type="password" class="textbox" name="plainpassword" placeholder="Password">
+                    <input type="password" class="textbox" name="confirmpassword" placeholder="Confirm password">
+                    <select name="Genre" >
+                        <option disabled selected value>Subscription</option>
+                        <option>Basic</option>
+                        <option>Premium</option>
+                        <option>Ultimate</option>
+                    </select>
+                    <div id="alertbox">
+                    </div>
+                </div>
 
+            <div id="Login-buttons">
 
+                <ol>
+                    <input type="submit" value="create">
+                </ol>
+                <ol>
 
-        </div>
+                    <li><a href="login.php">Cancel</a></li>
 
-        <div id="Login-buttons">
+                </ol>
 
-            <ol>
-
-                <li><a href="index_login.php">Create</a></li>
-
-            </ol>
-            <ol>
-
-                <li><a href="login.php">Cancel</a></li>
-
-            </ol>
-
+         </form>
         </div>
 
     </div>
