@@ -41,20 +41,25 @@
         $name = $firstname ." ".$lastname;
         $date = $date = date('m-d-y');
 
-        if($password = $confirmpassword){
 
-            $password =  password_hash($password, PASSWORD_DEFAULT);
-            $query = "INSERT INTO FletNix_Web.dbo.Customer VALUES ('$email','$name','no account','$date',NULL,'$password')";
-            executeQuery($query);
-
-            return "Account creation successful";
+        /*checking if the email adress is in use*/
+        $query = "SELECT * FROM FletNix_Web.dbo.Customer WHERE customer_mail_adres = '$email'";
+        echo $query;
+        $foundusers = executeQuery($query);
+        if(!empty($foundusers[0][0])){
+            return "Account creation failed: The mail address is already in use";
         }else{
-            return "Account creation failed: mismatched password";
+                /*confirming password*/
+                if($password = $confirmpassword){
+
+                    $password =  password_hash($password, PASSWORD_DEFAULT);
+                    $query = "INSERT INTO FletNix_Web.dbo.Customer VALUES ('$email','$name','no account','$date',NULL,'$password')";
+                    executeQuery($query);
+
+                    return "Account creation successful: please log in";
+                }else{
+                    return "Account creation failed: mismatched password";
+                }
+            }
         }
-    }
-
-
-
-
-
 ?>

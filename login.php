@@ -31,7 +31,7 @@
                 $incorrectLogindata = true;
             }
 
-        }else{
+        }elseif(isset($_POST['plainEmailaddress'])){
            $nologindata = true;
         }
 
@@ -42,7 +42,7 @@
      */
 
     /*form validation*/
-    if(!empty($_POST['firstname']) && !empty($_POST['lastname']) && !empty($_POST['createemail']) && !empty($_POST['createpassword']) && !empty($_POST['confirmpassword'])){
+    if(!empty($_POST['firstname']) && !empty($_POST['lastname']) && !empty($_POST['createemail']) && !empty($_POST['createpassword']) && !empty($_POST['confirmpassword']) && !empty(cleanInput($_POST['subscription']))){
 
         /*getting the data*/
         $userdata = array(
@@ -54,18 +54,24 @@
             cleanInput($_POST['subscription'])
 
         );
+        /*actually creating an account*/
         $errormessage = createAccount($userdata);
     }
 
-if (empty($_POST['firstname']) or
-    empty($_POST['lastname']) or
-    empty($_POST['createemail']) or
-    empty($_POST['createpassword']) or
-    empty($_POST['confirmpassword'])){
-    $errormessage = "Account creation failed: please fill in all fields";
-}
+    /*checking if one of the boxes was left empty*/
+    if (isset($_POST['firstname'])){
+        if (
+            empty($_POST['firstname']) or
+            empty($_POST['lastname']) or
+            empty($_POST['createemail']) or
+            empty($_POST['createpassword']) or
+            empty($_POST['confirmpassword'])){
+            $errormessage = "Account creation failed: please fill in all fields";
+        }
+    }
 
-    /*actually creating an account*/
+
+
 
 
 
