@@ -1,9 +1,3 @@
-/*
-http://vagevuur.dlinkddns.com/han/hackflix/flexbox_2.html
-
-*/
-
-
 
 * {
     margin: 0;
@@ -404,6 +398,15 @@ footer a:hover p{
     font-size: 2vh;
 
 }
+#video-info form{
+    display: flex;
+    align-items: center;
+
+}
+#video-info .searchbox{
+   margin-left: 1%;
+}
+
 #season-overview{
     height: 100%;
     margin-bottom: 4vh;

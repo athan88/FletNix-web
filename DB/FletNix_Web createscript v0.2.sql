@@ -131,6 +131,7 @@ create table Customer
 	subscription_start date NOT NULL,
 	subscription_end date NULL,
 	[password] varchar(255) NOT NULL, 
+	subscription varchar(255) NOT NULL,
 
 		--creating constriants
 		constraint pk_customer primary key (customer_mail_adres),
@@ -204,14 +205,9 @@ create table Favorites(
 use FletNix_Web
 
 
-select * from Favorites
+select * from Customer
+select * from Movie_rating
+
+delete from Customer where customer_mail_adres = 'test@test.nl'
 delete from Favorites
 
-select person.firstname from Person
-
-select Movie.movie_id, Movie.title, Movie.duration, Movie.[description], Movie.cover_image, Movie.previous_part, Movie.[URL], Movie.series
-from Movie join Movie_cast
-on Movie_cast.movie_id = Movie.movie_id
-join Person 
-on Person.person_id = Movie_cast.person_id
-where Person.firstname like '%$input%' OR Person.lastname like '%$input%' 

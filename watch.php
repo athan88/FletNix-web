@@ -24,15 +24,29 @@
     $data = executeQuery($query);
 
     if (isset($data[0])){
-
         $rating = $data[0];
-
     }else{
-
         $rating = 'N';
-
     }
 
+    /*adding a rating*/
+    if(!empty($_POST['rating'])){
+
+
+        /*checking if the user has already rated this movie*/
+        $rating = $_POST['rating'];
+        $query = "SELECT * FROM Movie_rating WHERE customer_mail_adres= $_SESSION[email]";
+        $foundratings = executeQuery($query);
+
+        if(!empty($foundratings)){
+            $query = "DELETE FROM Movie_rating WHERE customer_mail_adres = $_SESSION[email]";
+            addrating($_SESSION['email'],$row[0],$rating);
+
+         /*if the user has not already rated this movie*/
+        }else{
+            addrating($_SESSION['email'],$row[0],$rating);
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -140,9 +154,7 @@
            $movieId = urlencode($row[0]);
 
            if (!empty($response[0])){
-               echo "<form>";
                echo "<a href=\"Favorites.php?remove=$movieId\">Remove from your Favorites</a>";
-               echo "</form>";
            }else{
                echo "<a href=\"Favorites.php?new=$movieId\">Add to Favorites</a>";
            }
@@ -152,15 +164,21 @@
        ?>
         <h1><?php echo $row[1] ?></h1>
         <p>Rating:<?php echo "$rating[0]";?>/5</p>
-        <form method="post" action="watch.php?name=<?php $encodedname = urlencode($name); echo $encodedname?>">
-            <input type = "radio" name = "rating"  value="1">
-            <input type = "radio" name = "rating"  value="2">
-            <input type = "radio" name = "rating"  value="3">
-            <input type = "radio" name = "rating"  value="4">
-            <input type = "radio" name = "rating"  value="5">
-            <input class="searchbox" type="submit" value="rate">
-        </form>
+        <?php if(!empty($_SESSION['email'])){
+        $encodedname = urlencode($name);
+        echo "
 
+         <form method=\"post\"  action=\"watch.php?name=$encodedname\">
+            <input type = \"radio\" name = \"rating\"  value=\"1\">
+            <input type = \"radio\" name = \"rating\"  value=\"2\">
+            <input type = \"radio\" name = \"rating\"  value=\"3\">
+            <input type = \"radio\" name = \"rating\"  value=\"4\">
+            <input type = \"radio\" name = \"rating\"  value=\"5\">
+            <input class=\"searchbox\" type=\"submit\" value=\"rate\">
+        </form>
+        
+        ";}
+        ?>
 
     </div>
 
@@ -171,9 +189,6 @@
 
 
 </div>
-
-
-
 
 
 <footer>

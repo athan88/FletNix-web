@@ -53,7 +53,7 @@
                 if($password = $confirmpassword){
 
                     $password =  password_hash($password, PASSWORD_DEFAULT);
-                    $query = "INSERT INTO FletNix_Web.dbo.Customer VALUES ('$email','$name','no account','$date',NULL,'$password')";
+                    $query = "INSERT INTO FletNix_Web.dbo.Customer VALUES ('$email','$name','no account','$date',NULL,'$password','$subscription')";
                     executeQuery($query);
 
                     return "Account creation successful: please log in";
@@ -61,5 +61,11 @@
                     return "Account creation failed: mismatched password";
                 }
             }
+        }
+
+        /*function for adding ratings*/
+        function addrating($customermail, $movieid, $rating){
+            $query = "INSERT INTO Movie_rating VALUES ('$customermail','$movieid','$rating')";
+            executeQuery($query);
         }
 ?>

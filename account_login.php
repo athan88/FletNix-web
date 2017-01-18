@@ -1,3 +1,21 @@
+<?php
+
+require "connection.php";
+require "phpFunctions.php";
+require "LoginFunction.php";
+
+/*testing if the user is logged in*/
+if(empty($_SESSION['email'])) {
+    header("location: login.php");
+    die();
+}
+
+/*getting information about the user*/
+$query = "SELECT * FROM FletNix_Web.dbo.Customer WHERE customer_mail_adres = '$_SESSION[email]'";
+$userinfo = executeQuery($query);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,11 +67,13 @@
     <div id="account-container">
 
         <h1>My account</h1>
-        <p>Name: John Doe</p>
+        <p>Name: <?php echo $userinfo[0][1]?></p>
         <a>Change</a>
-        <p>Email Adress: John.Doe@email.com</p>
+        <p>Email Adress: <?php echo $userinfo[0][0];?></p>
         <a>Change</a>
         <p>Credit Card: 9921 1293 4957 1238</p>
+        <a>Change</a>
+        <p>Subscription: <?php echo $userinfo[0][6]?></p>
         <a>Change</a>
 
         <h1>Subscription Details</h1>
