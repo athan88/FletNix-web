@@ -100,7 +100,7 @@ include 'LoginFunction.php';
             }
 
             /*create and execute the query*/
-            $query = "  SELECT Movie.movie_id, Movie.title, Movie.duration, Movie.[description], Movie.publication_year, Movie.cover_image, Movie.previous_part, Movie.[URL], Movie.series
+            $query = "  SELECT DISTINCT Movie.movie_id, Movie.title, Movie.duration, Movie.[description], Movie.publication_year, Movie.cover_image, Movie.previous_part, Movie.[URL], Movie.series
                             FROM Movie 
                             LEFT JOIN Movie_genre 
                             ON Movie.movie_id = Movie_genre.movie_id
@@ -132,7 +132,7 @@ include 'LoginFunction.php';
             }
             if(!empty($_GET["keywords"])){
                 $keyword = cleanInput($_GET["keywords"]);
-                $query = "SELECT Movie.movie_id, Movie.title, Movie.duration, Movie.[description], Movie.publication_year, Movie.cover_image, Movie.previous_part, Movie.[URL], Movie.series
+                $query = "SELECT DISTINCT Movie.movie_id, Movie.title, Movie.duration, Movie.[description], Movie.publication_year, Movie.cover_image, Movie.previous_part, Movie.[URL], Movie.series
                             FROM Movie 
                             LEFT JOIN Movie_genre 
                             ON Movie.movie_id = Movie_genre.movie_id
@@ -145,6 +145,10 @@ include 'LoginFunction.php';
                             WHERE Movie.movie_id IS NOT NULL AND (Movie.title like '%$keyword%' OR Movie_genre.genre_name like '%$keyword%'
                             OR person.firstname like '%$keyword%' OR person.lastname like '%$keyword%')
                              ";
+            }
+            if($searchOptions["Actor"] != 'not set'){
+                $actor = $searchOptions["Actor"];
+                $query .= "AND (person.firstname like '%$actor%' OR person.lastname like '%$actor%') ";
             }
 
             /*sending the query*/

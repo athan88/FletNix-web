@@ -122,7 +122,7 @@ if (!empty($_GET['remove'])){
         }
 
         /*create and execute the query*/
-        $query = "  SELECT Movie.movie_id, Movie.title, Movie.duration, Movie.[description], Movie.publication_year, Movie.cover_image, Movie.previous_part, Movie.[URL], Movie.series
+        $query = "  SELECT DISTINCT Movie.movie_id, Movie.title, Movie.duration, Movie.[description], Movie.publication_year, Movie.cover_image, Movie.previous_part, Movie.[URL], Movie.series
                             FROM Movie 
                             LEFT JOIN Movie_genre 
                             ON Movie.movie_id = Movie_genre.movie_id
@@ -154,7 +154,7 @@ if (!empty($_GET['remove'])){
         }
         if(!empty($_GET["keywords"])){
             $keyword = cleanInput($_GET["keywords"]);
-            $query = "SELECT Movie.movie_id, Movie.title, Movie.duration, Movie.[description], Movie.publication_year, Movie.cover_image, Movie.previous_part, Movie.[URL], Movie.series
+            $query = "SELECT DISTINCT Movie.movie_id, Movie.title, Movie.duration, Movie.[description], Movie.publication_year, Movie.cover_image, Movie.previous_part, Movie.[URL], Movie.series
                             FROM Movie 
                             LEFT JOIN Movie_genre 
                             ON Movie.movie_id = Movie_genre.movie_id
@@ -168,6 +168,10 @@ if (!empty($_GET['remove'])){
                             OR person.firstname like '%$keyword%' OR person.lastname like '%$keyword%')
                              ";
         }
+        if($searchOptions["Actor"] != 'not set'){
+            $actor = $searchOptions["Actor"];
+            $query .= "AND (person.firstname like '%$actor%' OR person.lastname like '%$actor%') ";
+        }
 
         /*adding the criteria that the movie must be in users favorite list*/
         $emailadres = $_SESSION['email'];
@@ -177,9 +181,11 @@ if (!empty($_GET['remove'])){
         WHERE customer_mail_adres = '$emailadres')";
 
         /*sending the query*/
+        echo $query;
         $response = executeQuery($query);
 
         /*creating the thumbnail for each movie*/
+
         foreach ($response as $row) {
             echo '<div class="thumbnail">';
 
