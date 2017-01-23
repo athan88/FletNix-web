@@ -70,7 +70,7 @@
             <?php
 
             /*getting information about all movies*/
-            $query = "SELECT * FROM Movie";
+            $query = "SELECT * FROM Movie ORDER BY title";
             $response = executeQuery($query);
 
             /*creating the tumbnail for each movie*/

@@ -126,13 +126,14 @@ if (!empty($_GET['remove'])){
                             FROM Movie 
                             LEFT JOIN Movie_genre 
                             ON Movie.movie_id = Movie_genre.movie_id
-                            LEFT JOIN Movie_cast
-                            ON Movie_cast.movie_id = Movie.movie_id
-                            LEFT JOIN Person 
-                            ON Person.person_id = Movie_cast.person_id
+                            LEFT JOIN Movie_cast 
+                            ON  Movie.movie_id = Movie_cast.movie_id
                             LEFT JOIN Movie_director 
-                            ON Person.person_id = Movie_director.person_id
-                            WHERE Movie.movie_id IS NOT NULL
+                            ON movie.movie_id = Movie_director.movie_id
+                            LEFT JOIN Person PC
+                            ON PC.person_id = Movie_cast.person_id
+                            LEFT JOIN Person PD 
+                            ON PD.person_id = Movie_director.person_id
                             ";
 
         /*building the final query*/
@@ -150,7 +151,7 @@ if (!empty($_GET['remove'])){
         }
         if($searchOptions["Director"] != 'not set'){
             $director = $searchOptions["Director"];
-            $query .= "AND person.firstname like '%$director%' or person.lastname like '%$director%'";
+            $query .= "AND PD.firstname like '%$director%' or PD.lastname like '%$director%'";
         }
         if(!empty($_GET["keywords"])){
             $keyword = cleanInput($_GET["keywords"]);
@@ -158,19 +159,21 @@ if (!empty($_GET['remove'])){
                             FROM Movie 
                             LEFT JOIN Movie_genre 
                             ON Movie.movie_id = Movie_genre.movie_id
-                            LEFT JOIN Movie_cast
-                            ON Movie_cast.movie_id = Movie.movie_id
-                            LEFT JOIN Person 
-                            ON Person.person_id = Movie_cast.person_id
+                            LEFT JOIN Movie_cast 
+                            ON  Movie.movie_id = Movie_cast.movie_id
                             LEFT JOIN Movie_director 
-                            ON Person.person_id = Movie_director.person_id
+                            ON movie.movie_id = Movie_director.movie_id
+                            LEFT JOIN Person PC
+                            ON PC.person_id = Movie_cast.person_id
+                            LEFT JOIN Person PD 
+                            ON PD.person_id = Movie_director.person_id
                             WHERE Movie.movie_id IS NOT NULL AND (Movie.title like '%$keyword%' OR Movie_genre.genre_name like '%$keyword%'
-                            OR person.firstname like '%$keyword%' OR person.lastname like '%$keyword%')
+                            OR PC.firstname like '%$keyword%' OR PC.lastname like '%$keyword%' OR PD.firstname like '%$keyword%' OR PD.lastname like '%$keyword%')
                              ";
         }
         if($searchOptions["Actor"] != 'not set'){
             $actor = $searchOptions["Actor"];
-            $query .= "AND (person.firstname like '%$actor%' OR person.lastname like '%$actor%') ";
+            $query .= "AND (PC.firstname like '%$actor%' OR PC.lastname like '%$actor%') ";
         }
 
         /*adding the criteria that the movie must be in users favorite list*/
@@ -181,7 +184,6 @@ if (!empty($_GET['remove'])){
         WHERE customer_mail_adres = '$emailadres')";
 
         /*sending the query*/
-        echo $query;
         $response = executeQuery($query);
 
         /*creating the thumbnail for each movie*/

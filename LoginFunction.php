@@ -11,7 +11,6 @@
             $userEmail = $userId[0][0];
         }
 
-
         if (!empty($userEmail) && Password_verify($password, $userPassword)){
             $_SESSION["email"] = $userEmail;
             return true;
